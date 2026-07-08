@@ -1,1 +1,3 @@
-# ABYSS-BIOKERNEL-PROTOCOL
+# ABYSS BIOKERNEL PROTOCOL
+
+Interactive retro bio-tech gift protocol.
