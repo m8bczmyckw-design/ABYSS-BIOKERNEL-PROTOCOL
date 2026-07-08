@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>ABYSS BIOKERNEL II</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Noto+Kufi+Arabic:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <canvas id="rain"></canvas>
+  <div class="crt"></div>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+  <div class="glitchLayer" id="glitchLayer"></div>
+
+  <main class="app">
+    <section id="bootScene" class="scene active">
+      <div class="interface boot-interface">
+        <div class="bar top">
+          <span>ABYSS BIOKERNEL // SUBJECT INTAKE</span>
+          <span>ACCESS: GIFT_NODE</span>
+        </div>
+
+        <div class="boot-grid">
+          <aside class="bio-panel">
+            <div class="panel-title">BIO-SUBJECT</div>
+            <div class="specimen">
+              <svg viewBox="0 0 240 420" aria-hidden="true">
+                <defs>
+                  <filter id="glow"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <g filter="url(#glow)" stroke="currentColor" fill="none" stroke-width="4" stroke-linecap="round">
+                  <path d="M95 54 Q120 22 145 54 Q156 80 143 106 Q132 124 108 124 Q86 124 75 106 Q64 80 95 54Z"/>
+                  <circle cx="105" cy="82" r="5" fill="currentColor"/>
+                  <circle cx="135" cy="82" r="5" fill="currentColor"/>
+                  <path d="M107 106 H133"/>
+                  <path d="M120 126 V260"/>
+                  <path d="M83 150 Q120 178 157 150"/>
+                  <path d="M76 188 Q120 216 164 188"/>
+                  <path d="M88 226 Q120 246 152 226"/>
+                  <path d="M75 150 L42 248"/>
+                  <path d="M165 150 L198 248"/>
+                  <path d="M120 260 L76 382"/>
+                  <path d="M120 260 L164 382"/>
+                  <path d="M52 252 L36 300"/>
+                  <path d="M188 252 L204 300"/>
+                </g>
+              </svg>
+              <div class="scan-beam"></div>
+            </div>
+            <div class="data-stack">
+              <p><b>DNA</b><span>HUMAN</span></p>
+              <p><b>SOUL</b><span>NOT FOUND</span></p>
+              <p><b>MEMORY</b><span>UNSTABLE</span></p>
+              <p><b>CONSENT</b><span>PENDING</span></p>
+            </div>
+          </aside>
+
+          <section class="main-panel">
+            <div class="micro-label">SYNTHESIS PROTOCOL // ARABIC TERMINAL</div>
+            <h1>بروتوكول النواة السحيقة</h1>
+            <div id="bootText" class="typebox"></div>
+            <button id="startBtn" class="cta">بدء الفحص</button>
+          </section>
+
+          <aside class="side-panel">
+            <div class="panel-title">SYSTEM TRACE</div>
+            <div class="trace-list">
+              <p>INIT/GENOME_MAP</p>
+              <p>INIT/NEURAL_VOID</p>
+              <p>INIT/CONSCIOUSNESS_TRAP</p>
+              <p>WAITING_FOR_TOUCH</p>
+            </div>
+            <div class="orb">
+              <i></i><i></i><i></i>
+              <strong>CORE</strong>
+            </div>
+          </aside>
+        </div>
+
+        <div class="bar bottom">
+          <span>DO NOT TRUST THE QUESTION</span>
+          <span>V2.9.1</span>
+          <span>REALITY FILTER: DEGRADED</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="questionScene" class="scene">
+      <div class="interface question-interface">
+        <div class="bar top">
+          <span id="counter">COGNITIVE TEST</span>
+          <span>HUMAN RESPONSE CAPTURE</span>
+        </div>
+
+        <div class="question-layout">
+          <aside class="left-readout">
+            <div class="panel-title">NEURAL WEATHER</div>
+            <div class="waveform"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="readout-lines">
+              <p>الخوف: قابل للقياس</p>
+              <p>الاختيار: قابل للتلاعب</p>
+              <p>الوعي: مؤقت</p>
+            </div>
+          </aside>
+
+          <section class="question-panel">
+            <div id="qTitle" class="q-title"></div>
+            <div id="qText" class="q-text"></div>
+            <div class="answers" id="answers">
+              <button id="yesBtn">نعم</button>
+              <button id="noBtn">لا</button>
+            </div>
+          </section>
+        </div>
+
+        <div class="bar bottom">
+          <span>CONSENT LOGGING ENABLED</span>
+          <span>ANSWER LATENCY OBSERVED</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="errorScene" class="scene">
+      <div class="fatal">
+        <small>GENETIC DECISION FAULT</small>
+        <h1>خطأ حرج</h1>
+        <p>تم رصد إذن بشري غير مصرح به.</p>
+        <p>لم يكن من المفترض أن تصل إلى هذا الاختيار.</p>
+        <p>جاري تفعيل العقوبة.</p>
+      </div>
+    </section>
+
+    <section id="punishScene" class="scene">
+      <div class="interface punish-interface">
+        <div class="bar top">
+          <span>PUNISHMENT_PROTOCOL.SYS</span>
+          <span>HUMANITY REMOVAL</span>
+        </div>
+        <div class="punish-core">
+          <h1>بروتوكول العقوبة</h1>
+          <div class="progress"><div id="fill"></div></div>
+          <div id="purgeLog" class="purge-log"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="finalScene" class="scene">
+      <div class="final">
+        <div class="rings">
+          <div class="r r1"></div><div class="r r2"></div><div class="r r3"></div>
+          <div class="dot">NEURAL<br>CORE</div>
+        </div>
+        <h1>اكتملت عملية الاندماج</h1>
+        <div id="finalLog" class="final-log"></div>
+        <button id="giftBtn" class="cta finalBtn">فتح الهدية</button>
+      </div>
+    </section>
+
+    <section id="giftScene" class="scene">
+      <div class="gift">
+        <h1>تم فتح الهدية</h1>
+        <p>ليست هذه مجرد هدية.<br>إنها أثر من مستقبل مظلم، ونداء من عالمٍ لم يعد يثق بالإنسان.</p>
+        <em>WELCOME TO THE NEXT EVOLUTION</em>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
